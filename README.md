@@ -24,7 +24,7 @@ iot.createProduct({
 
 ## API 列表
 
-> 注意：下面的所有接口都已经实现，没有勾选是因为该接口的参数模型的声明还未完善
+> 注意：下面的所有接口都已经实现，没有勾选是因为该接口的参数模型的声明还未完善，使用 TypeScript 时传参暂时可使用 `as any` 过度，后期会逐步完善。
 
 - 产品管理
   - [x] [createProduct](https://help.aliyun.com/document_detail/69123.html)
