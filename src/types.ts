@@ -27,6 +27,7 @@ export interface CommonRequestParameters {
   [prop: string]: any
 }
 
+
 export interface CreateProductParameters {
   Action?: 'CreateProduct'
   ProductName: string
@@ -38,6 +39,334 @@ export interface CreateProductParameters {
   ProtocolType?: 'modbus' | 'opc-ua' | 'customize' | 'ble' | 'zigbee'
   NetType?: 'WIFI' | 'CELLULAR' | 'ETHERNET' | 'LORA' | 'OTHER'
   JoinPermissionId?: string
+}
+
+export interface UpdateProductParameters {
+  Action?: 'UpdateProduct'
+}
+
+export interface QueryProductListParameters {
+  Action?: 'QueryProductList'
+}
+
+export interface QueryProductParameters {
+  Action?: 'QueryProduct'
+}
+
+export interface DeleteProductParameters {
+  Action?: 'DeleteProduct'
+}
+
+export interface CreateProductTagsParameters {
+  Action?: 'CreateProductTags'
+}
+
+export interface UpdateProductTagsParameters {
+  Action?: 'UpdateProductTags'
+}
+
+export interface DeleteProductTagsParameters {
+  Action?: 'DeleteProductTags'
+}
+
+export interface ListProductTagsParameters {
+  Action?: 'ListProductTags'
+}
+
+export interface ListProductByTagsParameters {
+  Action?: 'ListProductByTags'
+}
+
+export interface RegisterDeviceParameters {
+  Action?: 'RegisterDevice'
+}
+
+export interface QueryDeviceDetailParameters {
+  Action?: 'QueryDeviceDetail'
+}
+
+export interface QueryDeviceParameters {
+  Action?: 'QueryDevice'
+}
+
+export interface DeleteDeviceParameters {
+  Action?: 'DeleteDevice'
+}
+
+export interface GetDeviceStatusParameters {
+  Action?: 'GetDeviceStatus'
+}
+
+export interface BatchGetDeviceStateParameters {
+  Action?: 'BatchGetDeviceState'
+}
+
+export interface DisableThingParameters {
+  Action?: 'DisableThing'
+}
+
+export interface EnableThingParameters {
+  Action?: 'EnableThing'
+}
+
+export interface BatchCheckDeviceNamesParameters {
+  Action?: 'BatchCheckDeviceNames'
+}
+
+export interface BatchRegisterDeviceWithApplyIdParameters {
+  Action?: 'BatchRegisterDeviceWithApplyId'
+}
+
+export interface BatchRegisterDeviceParameters {
+  Action?: 'BatchRegisterDevice'
+}
+
+export interface QueryBatchRegisterDeviceStatusParameters {
+  Action?: 'QueryBatchRegisterDeviceStatus'
+}
+
+export interface QueryPageByApplyIdParameters {
+  Action?: 'QueryPageByApplyId'
+}
+
+export interface QueryDeviceEventDataParameters {
+  Action?: 'QueryDeviceEventData'
+}
+
+export interface QueryDevicePropertyDataParameters {
+  Action?: 'QueryDevicePropertyData'
+}
+
+export interface QueryDevicePropertiesDataParameters {
+  Action?: 'QueryDevicePropertiesData'
+}
+
+export interface QueryDeviceServiceDataParameters {
+  Action?: 'QueryDeviceServiceData'
+}
+
+export interface InvokeThingServiceParameters {
+  Action?: 'InvokeThingService'
+}
+
+export interface InvokeThingsServiceParameters {
+  Action?: 'InvokeThingsService'
+}
+
+export interface QueryDevicePropertyStatusParameters {
+  Action?: 'QueryDevicePropertyStatus'
+}
+
+export interface SetDevicePropertyParameters {
+  Action?: 'SetDeviceProperty'
+}
+
+export interface SetDevicesPropertyParameters {
+  Action?: 'SetDevicesProperty'
+}
+
+export interface SaveDevicePropParameters {
+  Action?: 'SaveDeviceProp'
+}
+
+export interface QueryDevicePropParameters {
+  Action?: 'QueryDeviceProp'
+}
+
+export interface DeleteDevicePropParameters {
+  Action?: 'DeleteDeviceProp'
+}
+
+export interface GetThingTopoParameters {
+  Action?: 'GetThingTopo'
+}
+
+export interface NotifyAddThingTopoParameters {
+  Action?: 'NotifyAddThingTopo'
+}
+
+export interface RemoveThingTopoParameters {
+  Action?: 'RemoveThingTopo'
+}
+
+export interface QueryDeviceStatisticsParameters {
+  Action?: 'QueryDeviceStatistics'
+}
+
+export interface GetGatewayBySubDeviceParameters {
+  Action?: 'GetGatewayBySubDevice'
+}
+
+export interface QueryDeviceByTagsParameters {
+  Action?: 'QueryDeviceByTags'
+}
+
+export interface SetDeviceDesiredPropertyParameters {
+  Action?: 'SetDeviceDesiredProperty'
+}
+
+export interface QueryDeviceDesiredPropertyParameters {
+  Action?: 'QueryDeviceDesiredProperty'
+}
+
+export interface QueryDeviceFileListParameters {
+  Action?: 'QueryDeviceFileList'
+}
+
+export interface QueryDeviceFileParameters {
+  Action?: 'QueryDeviceFile'
+}
+
+export interface DeleteDeviceFileParameters {
+  Action?: 'DeleteDeviceFile'
+}
+
+export interface BatchUpdateDeviceNicknameParameters {
+  Action?: 'BatchUpdateDeviceNickname'
+}
+
+export interface QueryLoRaJoinPermissionsParameters {
+  Action?: 'QueryLoRaJoinPermissions'
+}
+
+export interface CreateLoRaNodesTaskParameters {
+  Action?: 'CreateLoRaNodesTask'
+}
+
+export interface GetLoraNodesTaskParameters {
+  Action?: 'GetLoraNodesTask'
+}
+
+export interface CreateDeviceGroupParameters {
+  Action?: 'CreateDeviceGroup'
+}
+
+export interface DeleteDeviceGroupParameters {
+  Action?: 'DeleteDeviceGroup'
+}
+
+export interface UpdateDeviceGroupParameters {
+  Action?: 'UpdateDeviceGroup'
+}
+
+export interface QueryDeviceGroupInfoParameters {
+  Action?: 'QueryDeviceGroupInfo'
+}
+
+export interface QueryDeviceGroupListParameters {
+  Action?: 'QueryDeviceGroupList'
+}
+
+export interface BatchAddDeviceGroupRelationsParameters {
+  Action?: 'BatchAddDeviceGroupRelations'
+}
+
+export interface BatchDeleteDeviceGroupRelationsParameters {
+  Action?: 'BatchDeleteDeviceGroupRelations'
+}
+
+export interface SetDeviceGroupTagsParameters {
+  Action?: 'SetDeviceGroupTags'
+}
+
+export interface QueryDeviceGroupTagListParameters {
+  Action?: 'QueryDeviceGroupTagList'
+}
+
+export interface QueryDeviceGroupByDeviceParameters {
+  Action?: 'QueryDeviceGroupByDevice'
+}
+
+export interface QuerySuperDeviceGroupParameters {
+  Action?: 'QuerySuperDeviceGroup'
+}
+
+export interface QueryDeviceListByDeviceGroupParameters {
+  Action?: 'QueryDeviceListByDeviceGroup'
+}
+
+export interface QueryDeviceGroupByTagsParameters {
+  Action?: 'QueryDeviceGroupByTags'
+}
+
+export interface ListRuleParameters {
+  Action?: 'ListRule'
+}
+
+export interface CreateRuleParameters {
+  Action?: 'CreateRule'
+}
+
+export interface GetRuleParameters {
+  Action?: 'GetRule'
+}
+
+export interface UpdateRuleParameters {
+  Action?: 'UpdateRule'
+}
+
+export interface DeleteRuleParameters {
+  Action?: 'DeleteRule'
+}
+
+export interface ListRuleActionsParameters {
+  Action?: 'ListRuleActions'
+}
+
+export interface GetRuleActionParameters {
+  Action?: 'GetRuleAction'
+}
+
+export interface CreateRuleActionParameters {
+  Action?: 'CreateRuleAction'
+}
+
+export interface UpdateRuleActionParameters {
+  Action?: 'UpdateRuleAction'
+}
+
+export interface DeleteRuleActionParameters {
+  Action?: 'DeleteRuleAction'
+}
+
+export interface StartRuleParameters {
+  Action?: 'StartRule'
+}
+
+export interface StopRuleParameters {
+  Action?: 'StopRule'
+}
+
+export interface QueryProductTopicParameters {
+  Action?: 'QueryProductTopic'
+}
+
+export interface CreateProductTopicParameters {
+  Action?: 'CreateProductTopic'
+}
+
+export interface UpdateProductTopicParameters {
+  Action?: 'UpdateProductTopic'
+}
+
+export interface DeleteProductTopicParameters {
+  Action?: 'DeleteProductTopic'
+}
+
+export interface CreateTopicRouteTableParameters {
+  Action?: 'CreateTopicRouteTable'
+}
+
+export interface QueryTopicRouteTableParameters {
+  Action?: 'QueryTopicRouteTable'
+}
+
+export interface QueryTopicReverseRouteTableParameters {
+  Action?: 'QueryTopicReverseRouteTable'
+}
+
+export interface DeleteTopicRouteTableParameters {
+  Action?: 'DeleteTopicRouteTable'
 }
 
 export interface PubParameters {
@@ -62,8 +391,17 @@ export interface PubParameters {
   Qos?: 0 | 1
 }
 
-export interface PubBroadcastParams {
-  Action: 'PubBroadcast'
+export interface RRpcParameters {
+  Action?: 'RRpc'
+  ProductKey: string
+  DeviceName: string
+  RequestBase64Byte: string
+  Timeout: number
+  Topic?: string
+}
+
+export interface PubBroadcastParameters {
+  Action?: 'PubBroadcast'
   /** 要发送广播消息的产品 Key */
   ProductKey: string
   /**
@@ -85,23 +423,14 @@ export interface PubBroadcastParams {
   MessageContent: string
 }
 
-export interface RRpcParameters {
-  Action: 'RRpc'
-  ProductKey: string
-  DeviceName: string
-  RequestBase64Byte: string
-  Timeout: number
-  Topic?: string
-}
-
 export interface GetDeviceShadowParameters {
-  Action: 'GetDeviceShadow'
+  Action?: 'GetDeviceShadow'
   ProductKey: string
   DeviceName: string
 }
 
 export interface UpdateDeviceShadowParameters {
-  Action: 'UpdateDeviceShadow'
+  Action?: 'UpdateDeviceShadow'
   ProductKey: string
   DeviceName: string
   ShadowMessage: string
