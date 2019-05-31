@@ -1,6 +1,6 @@
 {
   "name": "aliyun-iot-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Aliyun Server Side IoT SDK for Node.js.（阿里云 IoT 服务端 SDK）",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -29,9 +29,11 @@
   "homepage": "https://github.com/beary/aliyun-iot-sdk#readme",
   "dependencies": {
     "@types/node-fetch": "^2.3.4",
+    "form-data": "^2.3.3",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
+    "@types/form-data": "^2.2.1",
     "@types/node": "^12.0.3",
     "typescript": "^3.4.5"
   }
