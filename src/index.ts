@@ -136,8 +136,7 @@ export class IoT {
   private __request<T extends CommonRequestParameters>(params: T) {
     const { Timestamp, ...requestParams } = sign(params, this.accessKeySecret)
     const form = new FormData()
-    // 使用 POST 请求时，请求参数中的时间戳不进行 URL 编码
-    form.append('Timestamp', decodeURIComponent(Timestamp))
+    form.append('Timestamp', Timestamp)
     Object.keys(requestParams)
       .forEach(k => form.append(k, requestParams[k]))
     return fetch(this.endpoint, {
@@ -156,8 +155,7 @@ export class IoT {
       Version: this.version,
       AccessKeyId: this.accessKeyId,
       SignatureMethod: this.signatureMethod,
-      // 文档没说，但是从返回的报错信息来看，签名字符串中的时间戳要进行 URL 编码
-      Timestamp: encodeURIComponent(new Date().toISOString()),
+      Timestamp: new Date().toISOString(),
       SignatureVersion: this.signatureVersion,
       SignatureNonce: `${new Date().getTime()}`,
       RegionId: this.regionId
