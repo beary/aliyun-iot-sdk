@@ -24,12 +24,14 @@ export interface CommonRequestParameters {
   SignatureVersion: SignatureVersion
   SignatureNonce: string
   RegionId: RegionId
-  [prop: string]: any
 }
 
+export type RequestParameters = CreateProductParameters |
+  PubParameters | RRpcParameters | PubBroadcastParameters |
+  GetDeviceShadowParameters | UpdateDeviceShadowParameters
 
 export interface CreateProductParameters {
-  Action?: 'CreateProduct'
+  Action: 'CreateProduct'
   ProductName: string
   NodeType: 0 | 1
   AliyunCommodityCode?: 'iothub_senior' | 'iothub'
@@ -41,350 +43,22 @@ export interface CreateProductParameters {
   JoinPermissionId?: string
 }
 
-export interface UpdateProductParameters {
-  Action?: 'UpdateProduct'
-}
-
-export interface QueryProductListParameters {
-  Action?: 'QueryProductList'
-}
-
-export interface QueryProductParameters {
-  Action?: 'QueryProduct'
-}
-
-export interface DeleteProductParameters {
-  Action?: 'DeleteProduct'
-}
-
-export interface CreateProductTagsParameters {
-  Action?: 'CreateProductTags'
-}
-
-export interface UpdateProductTagsParameters {
-  Action?: 'UpdateProductTags'
-}
-
-export interface DeleteProductTagsParameters {
-  Action?: 'DeleteProductTags'
-}
-
-export interface ListProductTagsParameters {
-  Action?: 'ListProductTags'
-}
-
-export interface ListProductByTagsParameters {
-  Action?: 'ListProductByTags'
-}
-
-export interface RegisterDeviceParameters {
-  Action?: 'RegisterDevice'
-}
-
-export interface QueryDeviceDetailParameters {
-  Action?: 'QueryDeviceDetail'
-}
-
-export interface QueryDeviceParameters {
-  Action?: 'QueryDevice'
-}
-
-export interface DeleteDeviceParameters {
-  Action?: 'DeleteDevice'
-}
-
-export interface GetDeviceStatusParameters {
-  Action?: 'GetDeviceStatus'
-}
-
-export interface BatchGetDeviceStateParameters {
-  Action?: 'BatchGetDeviceState'
-}
-
-export interface DisableThingParameters {
-  Action?: 'DisableThing'
-}
-
-export interface EnableThingParameters {
-  Action?: 'EnableThing'
-}
-
-export interface BatchCheckDeviceNamesParameters {
-  Action?: 'BatchCheckDeviceNames'
-}
-
-export interface BatchRegisterDeviceWithApplyIdParameters {
-  Action?: 'BatchRegisterDeviceWithApplyId'
-}
-
-export interface BatchRegisterDeviceParameters {
-  Action?: 'BatchRegisterDevice'
-}
-
-export interface QueryBatchRegisterDeviceStatusParameters {
-  Action?: 'QueryBatchRegisterDeviceStatus'
-}
-
-export interface QueryPageByApplyIdParameters {
-  Action?: 'QueryPageByApplyId'
-}
-
-export interface QueryDeviceEventDataParameters {
-  Action?: 'QueryDeviceEventData'
-}
-
-export interface QueryDevicePropertyDataParameters {
-  Action?: 'QueryDevicePropertyData'
-}
-
-export interface QueryDevicePropertiesDataParameters {
-  Action?: 'QueryDevicePropertiesData'
-}
-
-export interface QueryDeviceServiceDataParameters {
-  Action?: 'QueryDeviceServiceData'
-}
-
-export interface InvokeThingServiceParameters {
-  Action?: 'InvokeThingService'
-}
-
-export interface InvokeThingsServiceParameters {
-  Action?: 'InvokeThingsService'
-}
-
-export interface QueryDevicePropertyStatusParameters {
-  Action?: 'QueryDevicePropertyStatus'
-}
-
-export interface SetDevicePropertyParameters {
-  Action?: 'SetDeviceProperty'
-}
-
-export interface SetDevicesPropertyParameters {
-  Action?: 'SetDevicesProperty'
-}
-
-export interface SaveDevicePropParameters {
-  Action?: 'SaveDeviceProp'
-}
-
-export interface QueryDevicePropParameters {
-  Action?: 'QueryDeviceProp'
-}
-
-export interface DeleteDevicePropParameters {
-  Action?: 'DeleteDeviceProp'
-}
-
-export interface GetThingTopoParameters {
-  Action?: 'GetThingTopo'
-}
-
-export interface NotifyAddThingTopoParameters {
-  Action?: 'NotifyAddThingTopo'
-}
-
-export interface RemoveThingTopoParameters {
-  Action?: 'RemoveThingTopo'
-}
-
-export interface QueryDeviceStatisticsParameters {
-  Action?: 'QueryDeviceStatistics'
-}
-
-export interface GetGatewayBySubDeviceParameters {
-  Action?: 'GetGatewayBySubDevice'
-}
-
-export interface QueryDeviceByTagsParameters {
-  Action?: 'QueryDeviceByTags'
-}
-
-export interface SetDeviceDesiredPropertyParameters {
-  Action?: 'SetDeviceDesiredProperty'
-}
-
-export interface QueryDeviceDesiredPropertyParameters {
-  Action?: 'QueryDeviceDesiredProperty'
-}
-
-export interface QueryDeviceFileListParameters {
-  Action?: 'QueryDeviceFileList'
-}
-
-export interface QueryDeviceFileParameters {
-  Action?: 'QueryDeviceFile'
-}
-
-export interface DeleteDeviceFileParameters {
-  Action?: 'DeleteDeviceFile'
-}
-
-export interface BatchUpdateDeviceNicknameParameters {
-  Action?: 'BatchUpdateDeviceNickname'
-}
-
-export interface QueryLoRaJoinPermissionsParameters {
-  Action?: 'QueryLoRaJoinPermissions'
-}
-
-export interface CreateLoRaNodesTaskParameters {
-  Action?: 'CreateLoRaNodesTask'
-}
-
-export interface GetLoraNodesTaskParameters {
-  Action?: 'GetLoraNodesTask'
-}
-
-export interface CreateDeviceGroupParameters {
-  Action?: 'CreateDeviceGroup'
-}
-
-export interface DeleteDeviceGroupParameters {
-  Action?: 'DeleteDeviceGroup'
-}
-
-export interface UpdateDeviceGroupParameters {
-  Action?: 'UpdateDeviceGroup'
-}
-
-export interface QueryDeviceGroupInfoParameters {
-  Action?: 'QueryDeviceGroupInfo'
-}
-
-export interface QueryDeviceGroupListParameters {
-  Action?: 'QueryDeviceGroupList'
-}
-
-export interface BatchAddDeviceGroupRelationsParameters {
-  Action?: 'BatchAddDeviceGroupRelations'
-}
-
-export interface BatchDeleteDeviceGroupRelationsParameters {
-  Action?: 'BatchDeleteDeviceGroupRelations'
-}
-
-export interface SetDeviceGroupTagsParameters {
-  Action?: 'SetDeviceGroupTags'
-}
-
-export interface QueryDeviceGroupTagListParameters {
-  Action?: 'QueryDeviceGroupTagList'
-}
-
-export interface QueryDeviceGroupByDeviceParameters {
-  Action?: 'QueryDeviceGroupByDevice'
-}
-
-export interface QuerySuperDeviceGroupParameters {
-  Action?: 'QuerySuperDeviceGroup'
-}
-
-export interface QueryDeviceListByDeviceGroupParameters {
-  Action?: 'QueryDeviceListByDeviceGroup'
-}
-
-export interface QueryDeviceGroupByTagsParameters {
-  Action?: 'QueryDeviceGroupByTags'
-}
-
-export interface ListRuleParameters {
-  Action?: 'ListRule'
-}
-
-export interface CreateRuleParameters {
-  Action?: 'CreateRule'
-}
-
-export interface GetRuleParameters {
-  Action?: 'GetRule'
-}
-
-export interface UpdateRuleParameters {
-  Action?: 'UpdateRule'
-}
-
-export interface DeleteRuleParameters {
-  Action?: 'DeleteRule'
-}
-
-export interface ListRuleActionsParameters {
-  Action?: 'ListRuleActions'
-}
-
-export interface GetRuleActionParameters {
-  Action?: 'GetRuleAction'
-}
-
-export interface CreateRuleActionParameters {
-  Action?: 'CreateRuleAction'
-}
-
-export interface UpdateRuleActionParameters {
-  Action?: 'UpdateRuleAction'
-}
-
-export interface DeleteRuleActionParameters {
-  Action?: 'DeleteRuleAction'
-}
-
-export interface StartRuleParameters {
-  Action?: 'StartRule'
-}
-
-export interface StopRuleParameters {
-  Action?: 'StopRule'
-}
-
-export interface QueryProductTopicParameters {
-  Action?: 'QueryProductTopic'
-}
-
-export interface CreateProductTopicParameters {
-  Action?: 'CreateProductTopic'
-}
-
-export interface UpdateProductTopicParameters {
-  Action?: 'UpdateProductTopic'
-}
-
-export interface DeleteProductTopicParameters {
-  Action?: 'DeleteProductTopic'
-}
-
-export interface CreateTopicRouteTableParameters {
-  Action?: 'CreateTopicRouteTable'
-}
-
-export interface QueryTopicRouteTableParameters {
-  Action?: 'QueryTopicRouteTable'
-}
-
-export interface QueryTopicReverseRouteTableParameters {
-  Action?: 'QueryTopicReverseRouteTable'
-}
-
-export interface DeleteTopicRouteTableParameters {
-  Action?: 'DeleteTopicRouteTable'
-}
-
 export interface PubParameters {
-  Action?: 'Pub'
+  Action: 'Pub'
   /** 要发送消息的产品 Key */
   ProductKey: string
   /**
    * 要接收消息的Topic
-   * 
+   *
    * 您可以调用QueryProductTopic接口查询产品下的Topic类列表，或在设备详情页的Topic列表页签下查看设备的具体Topic
-   * 
+   *
    * * 不支持系统Topic
    * * 指定Topic的操作权限须为发布或发布和订阅
    */
   TopicFullName: string
   /**
    * 要发送的消息主体
-   * 
+   *
    * 您需要将消息原文转换成二进制数据，并进行Base64编码，从而生成消息主体
    */
   MessageContent: string
@@ -392,7 +66,7 @@ export interface PubParameters {
 }
 
 export interface RRpcParameters {
-  Action?: 'RRpc'
+  Action: 'RRpc'
   ProductKey: string
   DeviceName: string
   RequestBase64Byte: string
@@ -401,14 +75,14 @@ export interface RRpcParameters {
 }
 
 export interface PubBroadcastParameters {
-  Action?: 'PubBroadcast'
+  Action: 'PubBroadcast'
   /** 要发送广播消息的产品 Key */
   ProductKey: string
   /**
    * 要接收广播消息的Topic全称
-   * 
+   *
    * 格式为：/broadcast/${productKey}/自定义字段
-   * 
+   *
    * 其中，${productKey}是要接收广播消息的具体产品Key；自定义字段中您可以指定任意字段
    * * 广播Topic是在设备开发时编码定义的，无需控制台创建
    * * 一个广播Topic最多可被1,000个设备订阅。
@@ -417,20 +91,20 @@ export interface PubBroadcastParameters {
   TopicFullName: string
   /**
    * 要发送的消息主体
-   * 
+   *
    * 您需要将消息原文转换成二进制数据，并进行Base64编码，从而生成消息主体
    */
   MessageContent: string
 }
 
 export interface GetDeviceShadowParameters {
-  Action?: 'GetDeviceShadow'
+  Action: 'GetDeviceShadow'
   ProductKey: string
   DeviceName: string
 }
 
 export interface UpdateDeviceShadowParameters {
-  Action?: 'UpdateDeviceShadow'
+  Action: 'UpdateDeviceShadow'
   ProductKey: string
   DeviceName: string
   ShadowMessage: string

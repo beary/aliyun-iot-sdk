@@ -1,30 +1,43 @@
 # aliyun-iot-sdk
 > ♥ 🇹🇸 纯 TypeScript 实现，提供完整声明文件
 
-Aliyun Server Side IoT SDK for Node.js.（阿里云 IoT 服务端 SDK）
+Aliyun Server Side IoT SDK for Node.js.（阿里云 IoT 服务端 Node.js SDK）
+
+## 旧版 API
+查看旧版 (0.0.5) API [点击此处](https://github.com/beary/aliyun-iot-sdk/tree/0.0.5#aliyun-iot-sdk)
 
 ## 使用示例
 
 ```typescript
-import { IoT } from 'aliyun-iot-sdk'
+import { Client } from 'aliyun-iot-sdk'
 
-const iot = new IoT({
+// 新建客户端
+const client = new Client({
   accessKeyId: '<xxxxx>',
   accessKeySecret: '<xxxxx>',
   regionId: 'cn-shanghai'
 })
 
-iot.createProduct({
-  ProductName: 'aliyun_iot_sdk_test',
-  NodeType: 0,
-  DataFormat: 0
+// 调用接口
+client.request({
+  Action: 'GetDeviceShadow',
+  DeviceName: 'test',
+  ProductKey: 'test'
 })
-
 ```
 
-## API 列表
+## API
 
-> 注意：下面的所有接口都已经实现，没有勾选是因为该接口的参数模型的声明还未完善，使用 TypeScript 时传参暂时可使用 `as any` 过度，后期会逐步完善。
+### 新建客户端
+- new Client()
+
+### 发送请求
+- Client.request(requestParameters)
+
+  - requestParameters 请求参数，目前已经添加类型声明的接口在下面的列表中，对于没有添加类型声明的接口，使用 ts 时用 `as any` 过度
+  - 返回值是一个 [axios](https://github.com/axios/axios) 的请求结果
+
+## 声明文件完成进度
 
 - 产品管理
   - [x] [createProduct](https://help.aliyun.com/document_detail/69123.html)
