@@ -101,6 +101,7 @@ export interface GetDeviceShadowParameters {
   Action: 'GetDeviceShadow'
   ProductKey: string
   DeviceName: string
+  IotInstanceId?: string
 }
 
 export interface UpdateDeviceShadowParameters {
@@ -108,4 +109,6 @@ export interface UpdateDeviceShadowParameters {
   ProductKey: string
   DeviceName: string
   ShadowMessage: string
+  IotInstanceId?: string
+  DeltaUpdate?: boolean
 }
